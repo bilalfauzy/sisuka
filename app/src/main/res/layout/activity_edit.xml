@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="5dp"
+    android:background="@color/purple_700">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textSize="20dp"
+        android:text="Form Edit Surat"/>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Widget.Material3.CardView.Filled"
+        android:layout_centerVertical="true"
+        app:cardCornerRadius="20dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="20dp">
+
+            <TextView
+                android:id="@+id/tv_no_surat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="nomor surat" />
+
+            <EditText
+                android:id="@+id/et_no_surat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_no_surat"
+                android:layout_marginBottom="8dp"
+                tools:text="nomor surat"
+                android:inputType="number"/>
+
+            <TextView
+                android:id="@+id/tv_penerima"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/et_no_surat"
+                android:text="Nomor surat" />
+
+            <EditText
+                android:id="@+id/et_penerima"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_penerima"
+                android:layout_marginBottom="8dp"
+                tools:text="penerima" />
+
+            <TextView
+                android:id="@+id/tv_pengirim"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/et_penerima"
+                android:text="Nomor surat" />
+
+            <EditText
+                android:id="@+id/et_pengirim"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_pengirim"
+                android:layout_marginBottom="8dp"
+                tools:text="penerima" />
+
+            <TextView
+                android:id="@+id/tv_tgl_terima"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/et_pengirim"
+                android:text="Tanggal terima" />
+
+            <EditText
+                android:id="@+id/et_tgl_terima"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_tgl_terima"
+                android:layout_marginBottom="8dp"
+                tools:text="tanggal terima"
+                android:inputType="datetime"/>
+
+            <TextView
+                android:id="@+id/tv_tgl_kirim"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/et_tgl_terima"
+                android:text="Tanggal Kirim" />
+
+            <EditText
+                android:id="@+id/et_tgl_kirim"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_tgl_kirim"
+                android:layout_marginBottom="8dp"
+                tools:text="tanggal kirim"
+                android:inputType="datetime"/>
+
+            <TextView
+                android:id="@+id/tv_perihal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/et_tgl_kirim"
+                android:text="Perihal" />
+
+            <EditText
+                android:id="@+id/et_perihal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_perihal"
+                android:layout_marginBottom="8dp"
+                tools:text="perihal" />
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSimpan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/et_perihal"
+                android:layout_alignParentEnd="true"
+                android:text="simpan"
+                app:backgroundTint="@color/hijau"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnKembali"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/et_perihal"
+                android:text="kembali"
+                app:backgroundTint="@color/merah"/>
+
+
+        </RelativeLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+</RelativeLayout>
