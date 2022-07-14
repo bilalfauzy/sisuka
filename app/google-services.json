@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "357499478075",
+    "project_id": "sisuka-91e7e",
+    "storage_bucket": "sisuka-91e7e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:357499478075:android:96db8d14c57570365c3c1e",
+        "android_client_info": {
+          "package_name": "com.example.sisuka"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "357499478075-f8hbmp0hblnv8d5ddvgjqa34igsemsko.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.sisuka",
+            "certificate_hash": "facda1fdb387cb28081d3b81dae8e0850ca5f3da"
+          }
+        },
+        {
+          "client_id": "357499478075-753vbr10lsb73vc75bl5il5851ug7bem.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAXUqgUUM4WxEv4Fw2ktTOskGF9qdBC5gc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "357499478075-753vbr10lsb73vc75bl5il5851ug7bem.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
