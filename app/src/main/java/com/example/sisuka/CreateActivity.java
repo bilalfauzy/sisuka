@@ -1,6 +1,8 @@
 package com.example.sisuka;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -8,7 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class CreateActivity extends AppCompatActivity {
+public class CreateActivity extends AppCompatActivity implements View.OnClickListener {
     private TextView tvNoSurat, tvPenerima, tvPengirim, tvTglTerima, tvTglKirim, tvPerihal;
     private Button btnSimpan, btnKembali;
     private EditText etNoSurat, etPenerima, etPengirim, etTglTerima, etTglKirim, etPerihal;
@@ -18,6 +20,13 @@ public class CreateActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create);
 
+        getView();
+
+        btnSimpan.setOnClickListener(this);
+        btnKembali.setOnClickListener(this);
+    }
+
+    private void getView() {
         tvNoSurat = findViewById(R.id.tv_no_surat);
         tvPenerima = findViewById(R.id.tv_penerima);
         tvPengirim = findViewById(R.id.tv_pengirim);
@@ -34,6 +43,13 @@ public class CreateActivity extends AppCompatActivity {
 
         btnSimpan = findViewById(R.id.btnSimpan);
         btnKembali = findViewById(R.id.btnKembali);
-
+    }
+    
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.btnSimpan:
+                Intent intent =
+        }
     }
 }
