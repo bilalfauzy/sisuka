@@ -44,12 +44,17 @@ public class CreateActivity extends AppCompatActivity implements View.OnClickLis
         btnSimpan = findViewById(R.id.btnSimpan);
         btnKembali = findViewById(R.id.btnKembali);
     }
-    
+
     @Override
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.btnSimpan:
-                Intent intent =
+                startActivity(new Intent(this, SuratMasukActivity.class)
+                        .putExtra());
+                break;
+            case R.id.btnKembali:
+                onBackPressed();
+                break;
         }
     }
 }

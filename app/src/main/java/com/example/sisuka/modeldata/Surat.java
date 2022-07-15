@@ -1,9 +1,29 @@
-package com.example.sisuka.ModelData;
+package com.example.sisuka.modeldata;
 
-import com.google.gson.annotations.SerializedName;
-
-public class SuratMasuk {
+public class Surat {
     private int id_surat;
+    private int nomor_surat;
+    private int tgl_kirim;
+    private int tgl_terima;
+    private String pengirim;
+    private String penerima;
+    private String perihal;
+    private String status;
+    private String file_surat;
+
+    Surat(){}
+
+    public Surat(int id_surat, int nomor_surat, int tgl_kirim, int tgl_terima, String pengirim, String penerima, String perihal, String status, String file_surat) {
+        this.id_surat = id_surat;
+        this.nomor_surat = nomor_surat;
+        this.tgl_kirim = tgl_kirim;
+        this.tgl_terima = tgl_terima;
+        this.pengirim = pengirim;
+        this.penerima = penerima;
+        this.perihal = perihal;
+        this.status = status;
+        this.file_surat = file_surat;
+    }
 
     public int getId_surat() {
         return id_surat;
@@ -13,11 +33,11 @@ public class SuratMasuk {
         this.id_surat = id_surat;
     }
 
-    public String getNomor_surat() {
+    public int getNomor_surat() {
         return nomor_surat;
     }
 
-    public void setNomor_surat(String nomor_surat) {
+    public void setNomor_surat(int nomor_surat) {
         this.nomor_surat = nomor_surat;
     }
 
@@ -69,11 +89,11 @@ public class SuratMasuk {
         this.status = status;
     }
 
-    private String nomor_surat;
-    private int tgl_kirim;
-    private int tgl_terima;
-    private String pengirim;
-    private String penerima;
-    private String perihal;
-    private String status;
+    public String getFile_surat() {
+        return file_surat;
+    }
+
+    public void setFile_surat(String file_surat) {
+        this.file_surat = file_surat;
+    }
 }

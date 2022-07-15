@@ -26,7 +26,7 @@
                 tools:src="@drawable/icon1" />
 
             <TextView
-                android:id="@+id/tv_no_surat"
+                android:id="@+id/tv_no_surat1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
@@ -36,60 +36,60 @@
                 tools:text="Nomor surat" />
 
             <TextView
-                android:id="@+id/tv_penerima"
+                android:id="@+id/tv_penerima1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/tv_no_surat"
+                android:layout_below="@+id/tv_no_surat1"
                 android:layout_toEndOf="@+id/img_surat"
                 android:ellipsize="end"
                 android:maxLines="2"
                 tools:text="Penerima" />
 
             <TextView
-                android:id="@+id/tv_pengirim"
+                android:id="@+id/tv_pengirim1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/tv_penerima"
+                android:layout_below="@+id/tv_penerima1"
                 android:layout_toEndOf="@+id/img_surat"
                 android:ellipsize="end"
                 android:maxLines="2"
                 tools:text="Pengirim" />
 
             <TextView
-                android:id="@+id/tv_tgl_terima"
+                android:id="@+id/tv_tgl_terima1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/tv_pengirim"
+                android:layout_below="@+id/tv_pengirim1"
                 android:layout_toEndOf="@+id/img_surat"
                 android:ellipsize="end"
                 android:maxLines="2"
                 tools:text="Tanggal Terima" />
 
             <TextView
-                android:id="@+id/tv_tgl_kirim"
+                android:id="@+id/tv_tgl_kirim1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/tv_tgl_terima"
+                android:layout_below="@+id/tv_tgl_terima1"
                 android:layout_toEndOf="@+id/img_surat"
                 android:ellipsize="end"
                 android:maxLines="2"
                 tools:text="Tanggal Kirim" />
 
             <TextView
-                android:id="@+id/tv_perihal"
+                android:id="@+id/tv_perihal1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/tv_tgl_kirim"
+                android:layout_below="@+id/tv_tgl_kirim1"
                 android:layout_toEndOf="@+id/img_surat"
                 android:ellipsize="end"
                 android:maxLines="2"
                 tools:text="Perihal" />
 
             <TextView
-                android:id="@+id/tv_status"
+                android:id="@+id/tv_status1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/tv_perihal"
+                android:layout_below="@+id/tv_perihal1"
                 android:layout_toEndOf="@+id/img_surat"
                 android:ellipsize="end"
                 android:maxLines="2"
@@ -99,7 +99,7 @@
                 android:id="@+id/btnEdit"
                 android:layout_width="120dp"
                 android:layout_height="wrap_content"
-                android:layout_alignTop="@+id/tv_penerima"
+                android:layout_alignTop="@+id/tv_penerima1"
                 android:layout_alignParentEnd="true"
                 app:backgroundTint="@color/hijau"
                 android:text="Edit"

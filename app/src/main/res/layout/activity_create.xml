@@ -27,112 +27,112 @@
             android:padding="20dp">
 
             <TextView
-                android:id="@+id/tv_no_surat"
+                android:id="@+id/tv_no_surat2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="nomor surat" />
 
             <EditText
-                android:id="@+id/et_no_surat"
+                android:id="@+id/et_no_surat2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/tv_no_surat"
+                android:layout_below="@+id/tv_no_surat2"
                 android:layout_marginBottom="8dp"
                 tools:text="nomor surat"
                 android:inputType="number"/>
 
             <TextView
-                android:id="@+id/tv_penerima"
+                android:id="@+id/tv_penerima2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/et_no_surat"
+                android:layout_below="@id/et_no_surat2"
                 android:text="Nomor surat" />
 
             <EditText
-                android:id="@+id/et_penerima"
+                android:id="@+id/et_penerima2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/tv_penerima"
+                android:layout_below="@+id/tv_penerima2"
                 android:layout_marginBottom="8dp"
                 tools:text="penerima" />
 
             <TextView
-                android:id="@+id/tv_pengirim"
+                android:id="@+id/tv_pengirim2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/et_penerima"
+                android:layout_below="@id/et_penerima2"
                 android:text="Nomor surat" />
 
             <EditText
-                android:id="@+id/et_pengirim"
+                android:id="@+id/et_pengirim2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/tv_pengirim"
+                android:layout_below="@+id/tv_pengirim2"
                 android:layout_marginBottom="8dp"
                 tools:text="penerima" />
 
             <TextView
-                android:id="@+id/tv_tgl_terima"
+                android:id="@+id/tv_tgl_terima2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/et_pengirim"
+                android:layout_below="@id/et_pengirim2"
                 android:text="Tanggal terima" />
 
             <EditText
-                android:id="@+id/et_tgl_terima"
+                android:id="@+id/et_tgl_terima2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/tv_tgl_terima"
+                android:layout_below="@+id/tv_tgl_terima2"
                 android:layout_marginBottom="8dp"
                 tools:text="tanggal terima"
                 android:inputType="datetime"/>
 
             <TextView
-                android:id="@+id/tv_tgl_kirim"
+                android:id="@+id/tv_tgl_kirim2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/et_tgl_terima"
+                android:layout_below="@id/et_tgl_terima2"
                 android:text="Tanggal Kirim" />
 
             <EditText
-                android:id="@+id/et_tgl_kirim"
+                android:id="@+id/et_tgl_kirim2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/tv_tgl_kirim"
+                android:layout_below="@+id/tv_tgl_kirim2"
                 android:layout_marginBottom="8dp"
                 tools:text="tanggal kirim"
                 android:inputType="datetime"/>
 
             <TextView
-                android:id="@+id/tv_perihal"
+                android:id="@+id/tv_perihal2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/et_tgl_kirim"
+                android:layout_below="@id/et_tgl_kirim2"
                 android:text="Perihal" />
 
             <EditText
-                android:id="@+id/et_perihal"
+                android:id="@+id/et_perihal2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/tv_perihal"
+                android:layout_below="@+id/tv_perihal2"
                 android:layout_marginBottom="8dp"
                 tools:text="perihal" />
 
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnSimpan"
+                android:id="@+id/btnSimpan2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/et_perihal"
+                android:layout_below="@+id/et_perihal2"
                 android:layout_alignParentEnd="true"
                 android:text="simpan"
                 app:backgroundTint="@color/hijau"/>
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnKembali"
+                android:id="@+id/btnKembali2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/et_perihal"
+                android:layout_below="@id/et_perihal2"
                 android:text="kembali"
                 app:backgroundTint="@color/merah"/>
 

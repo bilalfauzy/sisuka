@@ -24,6 +24,9 @@
         <activity android:name=".Notifikasi" />
         <activity android:name=".Profil" />
         <activity android:name=".MainActivity" />
+        <activity android:name=".CreateActivity"/>
+        <activity android:name=".EditActivity"/>
+        <activity android:name=".SuratMasukActivity"/>
 
         <service
             android:name=".firebase.MyFirebaseMessagingService"
