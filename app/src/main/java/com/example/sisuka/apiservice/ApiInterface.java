@@ -1,6 +1,7 @@
 package com.example.sisuka.apiservice;
 
 
+import com.example.sisuka.modeldata.GetSurat;
 import com.example.sisuka.modeldata.PostPutDelSurat;
 import com.example.sisuka.modeldata.Surat;
 
@@ -14,7 +15,8 @@ import retrofit2.http.PUT;
 
 public interface ApiInterface {
     @GET("surat")
-    Call<Surat> getSuratMasuk();
+    Call<GetSurat> getSuratMasuk();
+
     @FormUrlEncoded
     @POST("surat")
     Call<PostPutDelSurat> postSurat(@Field("nomor_surat") int nomor_surat,
@@ -25,7 +27,8 @@ public interface ApiInterface {
                                     @Field("perihal") String perihal);
     @FormUrlEncoded
     @PUT("surat")
-    Call<PostPutDelSurat> putSurat(@Field("nomor_surat") int nomor_surat,
+    Call<PostPutDelSurat> putSurat(@Field("id_surat") int id_surat,
+                                   @Field("nomor_surat") int nomor_surat,
                                    @Field("tgl_kirim") int tgl_kirim,
                                    @Field("tgl_terima") int tgl_terima,
                                    @Field("penerima") String penerima,

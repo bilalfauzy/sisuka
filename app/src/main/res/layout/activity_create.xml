@@ -38,8 +38,8 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tv_no_surat2"
                 android:layout_marginBottom="8dp"
-                tools:text="nomor surat"
-                android:inputType="number"/>
+                android:inputType="number"
+                tools:text="nomor surat" />
 
             <TextView
                 android:id="@+id/tv_penerima2"

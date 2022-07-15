@@ -1,14 +1,25 @@
 package com.example.sisuka.modeldata;
 
+import com.google.gson.annotations.SerializedName;
+
 public class Surat {
+    @SerializedName("id_surat")
     private int id_surat;
+    @SerializedName("nomor_surat")
     private int nomor_surat;
+    @SerializedName("tgl_kirim")
     private int tgl_kirim;
+    @SerializedName("tgl_terima")
     private int tgl_terima;
+    @SerializedName("pengirim")
     private String pengirim;
+    @SerializedName("penerima")
     private String penerima;
+    @SerializedName("perihal")
     private String perihal;
+    @SerializedName("status")
     private String status;
+    @SerializedName("file_surat")
     private String file_surat;
 
     Surat(){}

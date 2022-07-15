@@ -1,20 +1,23 @@
 package com.example.sisuka.adapter;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.sisuka.EditActivity;
 import com.example.sisuka.R;
 import com.example.sisuka.modeldata.Surat;
 
 import java.util.List;
 
-public class ListSuratAdapter extends RecyclerView.Adapter<ListSuratAdapter.SuratViewHolder> {
+public class ListSuratAdapter extends RecyclerView.Adapter<ListSuratAdapter.ViewHolder> {
     List<Surat> mListSurat;
 
     public ListSuratAdapter(List<Surat> ListSurat){
@@ -23,15 +26,38 @@ public class ListSuratAdapter extends RecyclerView.Adapter<ListSuratAdapter.Sura
 
     @NonNull
     @Override
-    public SuratViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View mView = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_surat_masuk, parent, false);
-        SuratViewHolder suratViewHolder = new SuratViewHolder(mView);
-        return suratViewHolder;
+        return new ViewHolder(mView);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull SuratViewHolder holder, int position) {
-        holder.itemView.g
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        Surat surat = mListSurat.get(position);
+        holder.tvIdSurat.setText("Id Surat :" +surat.getId_surat());
+        holder.tvNoSurat.setText("Nomor Surat :" +surat.getNomor_surat());
+        holder.tvPenerima.setText("Penerima :" +surat.getPenerima());
+        holder.tvPengirim.setText("Pengirim :" +surat.getPengirim());
+        holder.tvTglTerima.setText("Tanggal Terima :" +surat.getTgl_terima());
+        holder.tvTglKirim.setText("Tanggal Kirim :" +surat.getTgl_kirim());
+        holder.tvPerihal.setText("Perihal :" +surat.getPerihal());
+        holder.tvStatus.setText("Status :" +surat.getStatus());
+        holder.btnEdit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent mIntent = new Intent(view.getContext(), EditActivity.class);
+                view.getContext().startActivity(mIntent
+                        .putExtra("Id_Surat", surat.getId_surat())
+                        .putExtra("Nomor_Surat", surat.getNomor_surat())
+                        .putExtra("Penerima", surat.getPenerima())
+                        .putExtra("Pengirim", surat.getPengirim())
+                        .putExtra("Tanggal_Terima", surat.getTgl_terima())
+                        .putExtra("Tanggal_Kirim", surat.getTgl_kirim())
+                        .putExtra("Perihal", surat.getPerihal()));
+            }
+        });
+        holder.btnHapus.setOnClickListener(
+                view -> Toast.makeText(view.getContext(), "Surat Terhapus", Toast.LENGTH_SHORT).show());
     }
 
     @Override
@@ -39,13 +65,13 @@ public class ListSuratAdapter extends RecyclerView.Adapter<ListSuratAdapter.Sura
         return mListSurat.size();
     }
 
-    public class SuratViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolder extends RecyclerView.ViewHolder {
+        public TextView tvIdSurat, tvNoSurat, tvPenerima, tvPengirim, tvTglTerima, tvTglKirim, tvPerihal, tvStatus;
+        public Button btnEdit, btnHapus;
 
-        public SuratViewHolder(@NonNull View itemView) {
+        public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            TextView tvNoSurat, tvPenerima, tvPengirim, tvTglTerima, tvTglKirim, tvPerihal, tvStatus;
-            Button btnEdit, btnHapus;
-
+            tvIdSurat = itemView.findViewById(R.id.tv_id_surat3);
             tvNoSurat = itemView.findViewById(R.id.tv_no_surat1);
             tvPenerima = itemView.findViewById(R.id.tv_penerima1);
             tvPengirim = itemView.findViewById(R.id.tv_pengirim1);
@@ -55,4 +81,6 @@ public class ListSuratAdapter extends RecyclerView.Adapter<ListSuratAdapter.Sura
             tvStatus = itemView.findViewById(R.id.tv_status1);
         }
     }
+
+
 }

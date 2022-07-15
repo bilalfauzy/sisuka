@@ -27,10 +27,26 @@
             android:padding="20dp">
 
             <TextView
+                android:id="@+id/tv_id_surat3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Id surat" />
+
+            <EditText
+                android:id="@+id/et_id_surat3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_id_surat3"
+                android:layout_marginBottom="8dp"
+                tools:text="id surat"
+                android:inputType="number"/>
+
+            <TextView
                 android:id="@+id/tv_no_surat3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="nomor surat" />
+                android:layout_below="@+id/et_id_surat3"
+                android:text="Nomor surat" />
 
             <EditText
                 android:id="@+id/et_no_surat3"
@@ -135,7 +151,6 @@
                 android:layout_below="@id/et_perihal3"
                 android:text="kembali"
                 app:backgroundTint="@color/merah"/>
-
 
         </RelativeLayout>
 
