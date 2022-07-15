@@ -49,7 +49,7 @@ public class Dashboard extends AppCompatActivity {
             }
 
             private void d_button1() {
-                Intent intent = new Intent(Dashboard.this, MainActivity.class);
+                Intent intent = new Intent(Dashboard.this, SuratMasukActivity.class);
                 startActivity(intent);
             }
         });

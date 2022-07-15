@@ -59,6 +59,7 @@ public class SuratMasukActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<GetSurat> call, Response<GetSurat> response) {
                 List<Surat> listSurat =  response.body().getListSuratMasuk();
+                Log.d("Retrofit Get", "Jumlah data surat :" +String.valueOf(listSurat.size()));
                 listAdapter = new ListSuratAdapter(listSurat);
                 rvListSurat.setAdapter(listAdapter);
             }

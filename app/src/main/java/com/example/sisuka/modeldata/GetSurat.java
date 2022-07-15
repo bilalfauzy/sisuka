@@ -5,20 +5,8 @@ import com.google.gson.annotations.SerializedName;
 import java.util.List;
 
 public class GetSurat {
-    @SerializedName("status")
-    String status;
-    @SerializedName("result")
+    @SerializedName("Response")
     List<Surat> listSurat;
-    @SerializedName("message")
-    String message;
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
 
     public List<Surat> getListSuratMasuk() {
         return listSurat;
@@ -28,11 +16,4 @@ public class GetSurat {
         this.listSurat = listSurat;
     }
 
-    public String getMessage() {
-        return message;
-    }
-
-    public void setMessage(String message) {
-        this.message = message;
-    }
 }

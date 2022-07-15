@@ -14,7 +14,7 @@ import retrofit2.http.POST;
 import retrofit2.http.PUT;
 
 public interface ApiInterface {
-    @GET("surat")
+    @GET("get_surat_masuk_selesai")
     Call<GetSurat> getSuratMasuk();
 
     @FormUrlEncoded
