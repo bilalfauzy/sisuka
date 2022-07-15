@@ -17,14 +17,14 @@ public class Surat {
     private String penerima;
     @SerializedName("perihal")
     private String perihal;
-    @SerializedName("status")
-    private String status;
     @SerializedName("file_surat")
     private String file_surat;
+    @SerializedName("status")
+    private String status;
 
-    Surat(){}
+    public Surat(){}
 
-    public Surat(int id_surat, int nomor_surat, int tgl_kirim, int tgl_terima, String pengirim, String penerima, String perihal, String status, String file_surat) {
+    public Surat(int id_surat, int nomor_surat, int tgl_kirim, int tgl_terima, String pengirim, String penerima, String perihal, String file_surat, String status) {
         this.id_surat = id_surat;
         this.nomor_surat = nomor_surat;
         this.tgl_kirim = tgl_kirim;
@@ -32,8 +32,8 @@ public class Surat {
         this.pengirim = pengirim;
         this.penerima = penerima;
         this.perihal = perihal;
-        this.status = status;
         this.file_surat = file_surat;
+        this.status = status;
     }
 
     public int getId_surat() {
@@ -92,19 +92,19 @@ public class Surat {
         this.perihal = perihal;
     }
 
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
     public String getFile_surat() {
         return file_surat;
     }
 
     public void setFile_surat(String file_surat) {
         this.file_surat = file_surat;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }
