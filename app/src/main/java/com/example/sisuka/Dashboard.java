@@ -17,11 +17,9 @@ import android.widget.Button;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class Dashboard extends AppCompatActivity {
-
+public class Dashboard extends AppCompatActivity implements View.OnClickListener {
     DrawerLayout drawerLayout;
-    Button btn_logout, d_button1, d_button2, d_button3;
-
+    Button btn_logout, d_button1, d_button2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,63 +28,28 @@ public class Dashboard extends AppCompatActivity {
 
         drawerLayout = findViewById(R.id.drawerL);
         btn_logout = findViewById(R.id.btn_logout);
-
-        btn_logout.setOnClickListener(view -> {
-            FirebaseAuth.getInstance().signOut();
-            startActivity(new Intent(getApplicationContext(), LoginActivity.class));
-            finish();
-        });
-
         d_button1 = findViewById(R.id.d_button1);
-        d_button1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                switch (view.getId()){
-                    case R.id.d_button1:
-                        d_button1();
-                        break;
-                }
-            }
+        d_button2 = findViewById(R.id.d_button2);
 
-            private void d_button1() {
+        btn_logout.setOnClickListener(this);
+        d_button1.setOnClickListener(this);
+        d_button2.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.d_button1:
                 Intent intent = new Intent(Dashboard.this, SuratMasukActivity.class);
                 startActivity(intent);
-            }
-        });
-
-        d_button2 = findViewById(R.id.d_button2);
-        d_button2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                switch (view.getId()){
-                    case R.id.d_button2:
-                        d_button2();
-                        break;
-                }
-            }
-
-            private void d_button2() {
-                Intent intent = new Intent(Dashboard.this, MainActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        d_button3 = findViewById(R.id.d_button3);
-        d_button3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                switch (view.getId()){
-                    case R.id.d_button3:
-                        d_button3();
-                        break;
-                }
-            }
-
-            private void d_button3() {
-                Intent intent = new Intent(Dashboard.this, MainActivity.class);
-                startActivity(intent);
-            }
-        });
+            case R.id.d_button2:
+                Intent intent1 = new Intent(Dashboard.this, SuratKeluarActivity.class);
+                startActivity(intent1);
+            case R.id.btn_logout:
+                FirebaseAuth.getInstance().signOut();
+                startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+                finish();
+        }
     }
 
     public void ClickMenu(View view){
@@ -108,7 +71,6 @@ public class Dashboard extends AppCompatActivity {
     }
 
     public void ClickHome(View view){
-
         recreate();
     }
     public void ClickNotification(View view){

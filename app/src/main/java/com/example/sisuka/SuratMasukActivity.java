@@ -27,7 +27,6 @@ import retrofit2.Response;
 
 public class SuratMasukActivity extends AppCompatActivity {
     public static SuratMasukActivity sm;
-    private FloatingActionButton fabCreate;
     private RecyclerView rvListSurat;
     private ApiInterface mApiInterface;
     private RecyclerView.Adapter listAdapter;
@@ -37,14 +36,6 @@ public class SuratMasukActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_surat_masuk);
-
-        fabCreate = findViewById(R.id.fab_create);
-        fabCreate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(SuratMasukActivity.this, CreateActivity.class));
-            }
-        });
 
         rvListSurat = findViewById(R.id.rv_suratmasuk);
         rvListSurat.setHasFixedSize(true);

@@ -107,7 +107,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Informasi"
+                                android:text="Surat Keluar"
                                 android:textStyle="bold"
                                 android:textSize="20sp"
                                 android:textColor="@color/black"
@@ -125,55 +125,6 @@
                             android:layout_marginTop="100dp">
                             <Button
                                 android:id="@+id/d_button2"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="Lihat Sekarang"
-                                android:textSize="20sp"
-                                android:textStyle="bold"/>
-                        </LinearLayout>
-                    </androidx.cardview.widget.CardView>
-
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="match_parent"
-                        android:layout_height="150dp"
-                        android:layout_margin="30dp"
-                        app:cardElevation="40dp"
-                        app:cardCornerRadius="10dp">
-
-                        <ImageView
-                            android:layout_width="70dp"
-                            android:layout_height="70dp"
-                            android:src="@drawable/icon3"
-                            android:layout_marginLeft="25dp"
-                            android:layout_marginTop="25dp"/>
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="110dp"
-                            android:orientation="vertical"
-                            android:gravity="center"
-                            android:layout_marginTop="40dp">
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Pesan"
-                                android:textStyle="bold"
-                                android:textSize="20sp"
-                                android:textColor="@color/black"
-                                android:id="@+id/title3"/>
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Perlu Anda Baca"
-                                android:textStyle="bold"
-                                android:id="@+id/text_title3"/>
-                        </LinearLayout>
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_marginTop="100dp">
-                            <Button
-                                android:id="@+id/d_button3"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="Lihat Sekarang"

@@ -1,7 +1,6 @@
 package com.example.sisuka.adapter;
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,9 +10,9 @@ import android.widget.Toast;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.sisuka.EditActivity;
 import com.example.sisuka.R;
 import com.example.sisuka.modeldata.Surat;
+import com.example.sisuka.modeldata.SuratKeluar;
 
 import java.util.List;
 
@@ -35,30 +34,22 @@ public class ListSuratAdapter extends RecyclerView.Adapter<ListSuratAdapter.View
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         Surat surat = mListSurat.get(position);
-        holder.tvIdSurat.setText("Id Surat :" +surat.getId_surat());
-        holder.tvNoSurat.setText("Nomor Surat :" +surat.getNomor_surat());
-        holder.tvPenerima.setText("Penerima :" +surat.getPenerima());
-        holder.tvPengirim.setText("Pengirim :" +surat.getPengirim());
-        holder.tvTglTerima.setText("Tanggal Terima :" +surat.getTgl_terima());
-        holder.tvTglKirim.setText("Tanggal Kirim :" +surat.getTgl_kirim());
-        holder.tvPerihal.setText("Perihal :" +surat.getPerihal());
-        holder.tvStatus.setText("Status :" +surat.getStatus());
-        holder.btnEdit.setOnClickListener(new View.OnClickListener() {
+        holder.tvIdSurat.setText("Id Surat\t\t: " +surat.getId_surat());
+        holder.tvNoSurat.setText("Nomor Surat\t: " +surat.getNomor_surat());
+        holder.tvPenerima.setText("Penerima\t\t: " +surat.getPenerima());
+        holder.tvPengirim.setText("Pengirim\t\t: " +surat.getPengirim());
+        holder.tvTglTerima.setText("Tanggal Terima\t: " +surat.getTgl_terima());
+        holder.tvTglKirim.setText("Tanggal Kirim\t: " +surat.getTgl_kirim());
+        holder.tvPerihal.setText("Perihal\t\t: " +surat.getPerihal());
+        holder.tvStatus.setText("Status\t\t: " +surat.getStatus());
+        holder.tvFileSurat.setText("File Surat\t\t: " +surat.getFile_surat());
+
+        holder.btnDownload.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent mIntent = new Intent(view.getContext(), EditActivity.class);
-                view.getContext().startActivity(mIntent
-                        .putExtra("Id_Surat", surat.getId_surat())
-                        .putExtra("Nomor_Surat", surat.getNomor_surat())
-                        .putExtra("Penerima", surat.getPenerima())
-                        .putExtra("Pengirim", surat.getPengirim())
-                        .putExtra("Tanggal_Terima", surat.getTgl_terima())
-                        .putExtra("Tanggal_Kirim", surat.getTgl_kirim())
-                        .putExtra("Perihal", surat.getPerihal()));
+                Toast.makeText(view.getContext(), "Downloading", Toast.LENGTH_SHORT).show();
             }
         });
-        holder.btnHapus.setOnClickListener(
-                view -> Toast.makeText(view.getContext(), "Surat Terhapus", Toast.LENGTH_SHORT).show());
     }
 
     @Override
@@ -67,8 +58,8 @@ public class ListSuratAdapter extends RecyclerView.Adapter<ListSuratAdapter.View
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        public TextView tvIdSurat, tvNoSurat, tvPenerima, tvPengirim, tvTglTerima, tvTglKirim, tvPerihal, tvStatus;
-        public Button btnEdit, btnHapus;
+        public TextView tvIdSurat, tvNoSurat, tvPenerima, tvPengirim, tvTglTerima, tvTglKirim, tvPerihal, tvStatus, tvFileSurat;
+        public Button btnDownload;
 
         public ViewHolder(View itemView) {
             super(itemView);
@@ -80,9 +71,9 @@ public class ListSuratAdapter extends RecyclerView.Adapter<ListSuratAdapter.View
             tvTglKirim = itemView.findViewById(R.id.tv_tgl_kirim1);
             tvPerihal = itemView.findViewById(R.id.tv_perihal1);
             tvStatus = itemView.findViewById(R.id.tv_status1);
+            tvFileSurat = itemView.findViewById(R.id.tv_file_surat1);
 
-            btnEdit = itemView.findViewById(R.id.btnEdit);
-            btnHapus = itemView.findViewById(R.id.btnDelete);
+            btnDownload = itemView.findViewById(R.id.btnDownload1);
         }
     }
 }
