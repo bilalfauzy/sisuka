@@ -24,15 +24,14 @@ public class ListSuratAdapter extends RecyclerView.Adapter<ListSuratAdapter.View
         mListSurat = ListSurat;
     }
 
-    @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View mView = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_surat_masuk, parent, false);
         return new ViewHolder(mView);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public void onBindViewHolder(ViewHolder holder, int position) {
         Surat surat = mListSurat.get(position);
         holder.tvIdSurat.setText("Id Surat :" +surat.getId_surat());
         holder.tvNoSurat.setText("Nomor Surat :" +surat.getNomor_surat());
@@ -69,9 +68,9 @@ public class ListSuratAdapter extends RecyclerView.Adapter<ListSuratAdapter.View
         public TextView tvIdSurat, tvNoSurat, tvPenerima, tvPengirim, tvTglTerima, tvTglKirim, tvPerihal, tvStatus;
         public Button btnEdit, btnHapus;
 
-        public ViewHolder(@NonNull View itemView) {
+        public ViewHolder(View itemView) {
             super(itemView);
-            tvIdSurat = itemView.findViewById(R.id.tv_id_surat3);
+            tvIdSurat = itemView.findViewById(R.id.tv_id_surat1);
             tvNoSurat = itemView.findViewById(R.id.tv_no_surat1);
             tvPenerima = itemView.findViewById(R.id.tv_penerima1);
             tvPengirim = itemView.findViewById(R.id.tv_pengirim1);

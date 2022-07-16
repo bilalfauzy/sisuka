@@ -1,10 +1,12 @@
 package com.example.sisuka.apiservice;
 
+import com.example.sisuka.Config;
+
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ApiClient {
-    public static final String BASE_URL = "http://127.0.0.1/rest_server_sisuka/index.php/";
+    public static final String BASE_URL = Config.BASE_URL;
     private static Retrofit retrofit = null;
     public static Retrofit getClient(){
         if(retrofit == null){
