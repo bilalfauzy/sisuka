@@ -1,5 +1,7 @@
 package com.example.sisuka.appactivity;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
@@ -58,14 +60,18 @@ public class SuratKeluarActivity extends AppCompatActivity {
                 listAdapterK = new ListSuratKeluarAdapter(getApplicationContext(), listSuratKeluar, new ClickListener() {
                     @Override
                     public void onPositionClicked(int position) {
-                        Toast.makeText(getApplicationContext(), "Downloading"+position, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Downloading..", Toast.LENGTH_SHORT).show();
                         SuratKeluar suratKeluar = listSuratKeluar.get(position);
 
                         String namaFile = suratKeluar.getFile_suratkeluar();
                         String urlFile = Config.FILE_URL;
                         String urlDownload = urlFile+namaFile;
-
                         Log.d("link", "link" +urlDownload);
+
+                        if (urlDownload != null){
+                            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(urlDownload));
+                            startActivity(intent);
+                        }
                     }
                 });
                 rvListSuratKeluar.setAdapter(listAdapterK);

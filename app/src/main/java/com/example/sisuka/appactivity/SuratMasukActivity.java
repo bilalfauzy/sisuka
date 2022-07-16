@@ -2,6 +2,7 @@ package com.example.sisuka.appactivity;
 
 import android.app.DownloadManager;
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -63,7 +64,7 @@ public class SuratMasukActivity extends AppCompatActivity {
                 listAdapter = new ListSuratAdapter(getApplicationContext(), listSurat, new ClickListener() {
                     @Override
                     public void onPositionClicked(int position) {
-                        Toast.makeText(getApplicationContext(), "Downloading"+position, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Downloading..", Toast.LENGTH_SHORT).show();
 
                         Surat suratMasuk = listSurat.get(position);
 
@@ -72,7 +73,10 @@ public class SuratMasukActivity extends AppCompatActivity {
                         String urlDownload = urlFile+namaFile;
 
                         Log.d("link", "link" +urlDownload);
-
+                        if (urlDownload != null){
+                            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(urlDownload));
+                            startActivity(intent);
+                        }
                     }
                 });
                 rvListSurat.setAdapter(listAdapter);

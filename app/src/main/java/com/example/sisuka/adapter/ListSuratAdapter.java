@@ -84,7 +84,6 @@ public class ListSuratAdapter extends RecyclerView.Adapter<ListSuratAdapter.View
         @Override
         public void onClick(View view) {
             if (view.getId() == btnDownload.getId()){
-
             }
             listenerRef.get().onPositionClicked(getAdapterPosition());
         }
