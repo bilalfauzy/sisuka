@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="5dp"
-    android:background="@color/purple_700">
+    android:background="@color/silverback"
+    android:padding="5dp">
 
     <androidx.cardview.widget.CardView
+        style="@style/Widget.Material3.CardView.Elevated"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        style="@style/Widget.Material3.CardView.Elevated"
         app:cardCornerRadius="20dp">
 
         <RelativeLayout
@@ -18,106 +18,122 @@
             android:layout_height="match_parent"
             android:padding="10dp">
 
-            <TextView
-                android:id="@+id/tv_no_surat1"
+            <RelativeLayout
+                android:id="@+id/kontainer1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                tools:text="Nomor Surat" />
+                android:layout_alignParentStart="true"
+                android:layout_toStartOf="@+id/kontainer2">
 
-            <TextView
-                android:id="@+id/tv_id_surat1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/tv_no_surat1"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                tools:text="ID Surat" />
+                <TextView
+                    android:id="@+id/tv_no_surat1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    tools:text="Nomor Surat" />
 
-            <TextView
-                android:id="@+id/tv_penerima1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/tv_id_surat1"
-                android:ellipsize="end"
-                android:maxLines="2"
-                tools:text="Penerima" />
+                <TextView
+                    android:id="@+id/tv_id_surat1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_no_surat1"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    tools:text="ID Surat" />
 
-            <TextView
-                android:id="@+id/tv_pengirim1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/tv_penerima1"
-                android:ellipsize="end"
-                android:maxLines="2"
-                tools:text="Pengirim" />
+                <TextView
+                    android:id="@+id/tv_penerima1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_id_surat1"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    tools:text="Penerima" />
 
-            <TextView
-                android:id="@+id/tv_tgl_terima1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/tv_pengirim1"
-                android:ellipsize="end"
-                android:maxLines="2"
-                tools:text="Tanggal Terima" />
+                <TextView
+                    android:id="@+id/tv_pengirim1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_penerima1"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    tools:text="Pengirim" />
 
-            <TextView
-                android:id="@+id/tv_tgl_kirim1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/tv_tgl_terima1"
-                android:ellipsize="end"
-                android:maxLines="2"
-                tools:text="Tanggal Kirim" />
+                <TextView
+                    android:id="@+id/tv_tgl_terima1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_pengirim1"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    tools:text="Tanggal Terima" />
 
-            <TextView
-                android:id="@+id/tv_perihal1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/tv_tgl_kirim1"
-                android:ellipsize="end"
-                android:maxLines="2"
-                tools:text="Perihal" />
+                <TextView
+                    android:id="@+id/tv_tgl_kirim1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_tgl_terima1"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    tools:text="Tanggal Kirim" />
 
-            <TextView
-                android:id="@+id/tv_status1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/tv_perihal1"
-                android:ellipsize="end"
-                android:maxLines="2"
-                tools:text="Status" />
+                <TextView
+                    android:id="@+id/tv_perihal1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_tgl_kirim1"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    tools:text="Perihal" />
 
-            <TextView
-                android:id="@+id/tv_file_surat1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/tv_status1"
-                android:ellipsize="end"
-                android:maxLines="2"
-                tools:text="File Surat" />
+                <TextView
+                    android:id="@+id/tv_status1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_perihal1"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    tools:text="Status" />
 
-            <TextView
-                android:id="@+id/tv_downfile1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/btnDownload1"
-                android:layout_alignTop="@+id/tv_penerima1"
-                android:layout_alignParentEnd="true"
-                android:ellipsize="end"
-                android:maxLines="2"
-                tools:text="Download file surat" />
+                <TextView
+                    android:id="@+id/tv_file_surat1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_status1"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    tools:text="File Surat" />
+            </RelativeLayout>
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnDownload1"
-                android:layout_width="wrap_content"
+            <RelativeLayout
+                android:id="@+id/kontainer2"
+                android:layout_width="160dp"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:layout_alignParentEnd="true"
-                android:text="Download"
-                app:backgroundTint="@color/hijau"
-                app:icon="@drawable/ic_baseline_download_24" />
+                android:layout_alignParentEnd="true">
+
+                <TextView
+                    android:id="@+id/tv_downfile1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/btnDownload1"
+                    android:layout_alignParentEnd="true"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    tools:text="Download file surat" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnDownload1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_downfile1"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:text="Download"
+                    app:backgroundTint="@color/hijau"
+                    app:icon="@drawable/ic_baseline_download_24" />
+            </RelativeLayout>
 
         </RelativeLayout>
 

@@ -12,7 +12,7 @@ import android.util.Log;
 
 import androidx.core.app.NotificationCompat;
 
-import com.example.sisuka.MainActivity;
+import com.example.sisuka.appactivity.MainActivity;
 import com.example.sisuka.R;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;

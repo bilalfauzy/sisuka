@@ -1,26 +1,22 @@
-package com.example.sisuka;
+package com.example.sisuka.appactivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.sisuka.R;
 import com.example.sisuka.adapter.ListSuratAdapter;
 import com.example.sisuka.apiservice.ApiClient;
 import com.example.sisuka.apiservice.ApiInterface;
 import com.example.sisuka.modeldata.GetSurat;
 import com.example.sisuka.modeldata.Surat;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
-import okhttp3.OkHttpClient;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;

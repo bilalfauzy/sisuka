@@ -1,4 +1,4 @@
-package com.example.sisuka;
+package com.example.sisuka.appactivity;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.sisuka.adapter.ListSuratAdapter;
+import com.example.sisuka.R;
 import com.example.sisuka.adapter.ListSuratKeluarAdapter;
 import com.example.sisuka.apiservice.ApiClient;
 import com.example.sisuka.apiservice.ApiInterface;

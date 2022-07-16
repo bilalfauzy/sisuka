@@ -4,13 +4,25 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/purple_700"
+    android:background="@color/silverback"
     android:padding="5dp">
+
+    <TextView
+        android:id="@+id/tvsm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_centerHorizontal="true"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:text="Daftar Surat Masuk"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_suratmasuk"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/tvsm"
         android:background="@color/white"
         tools:listitem="@layout/list_surat_masuk" />
 

@@ -1,16 +1,16 @@
-package com.example.sisuka;
+package com.example.sisuka.appactivity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.sisuka.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -85,7 +85,7 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     private void reload(){
-        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+        startActivity(new Intent(getApplicationContext(), com.example.sisuka.appactivity.MainActivity.class));
     }
 
     @Override

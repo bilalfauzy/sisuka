@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:usesCleartextTraffic="true"
         android:theme="@style/Theme.Sisuka">
-        <activity android:name=".SplashScreen"
+        <activity android:name=".appactivity.SplashScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,14 +19,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".RegisterActivity" />
-        <activity android:name=".Dashboard" />
-        <activity android:name=".Notifikasi" />
-        <activity android:name=".Profil" />
-        <activity android:name=".MainActivity" />
-        <activity android:name=".SuratMasukActivity"/>
-        <activity android:name=".SuratKeluarActivity"/>
+        <activity android:name=".appactivity.LoginActivity" />
+        <activity android:name=".appactivity.RegisterActivity" />
+        <activity android:name=".appactivity.Dashboard" />
+        <activity android:name=".appactivity.Notifikasi" />
+        <activity android:name=".appactivity.Profil" />
+        <activity android:name=".appactivity.MainActivity" />
+        <activity android:name=".appactivity.SuratMasukActivity"/>
+        <activity android:name=".appactivity.SuratKeluarActivity"/>
 
         <service
             android:name=".firebase.MyFirebaseMessagingService"

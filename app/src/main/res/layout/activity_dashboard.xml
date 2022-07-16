@@ -5,7 +5,7 @@
     android:id="@+id/dashboard"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Dashboard">
+    tools:context=".appactivity.Dashboard">
 
     <androidx.drawerlayout.widget.DrawerLayout
         android:id="@+id/drawerL"
@@ -115,10 +115,10 @@
                                 android:id="@+id/title2"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="10dp"
                                 android:layout_marginLeft="10dp"
+                                android:layout_marginTop="10dp"
                                 android:layout_toEndOf="@+id/iv2"
-                                android:text="Surat Masuk"
+                                android:text="Surat Keluar"
                                 android:textColor="@color/black"
                                 android:textSize="20sp"
                                 android:textStyle="bold" />
@@ -150,5 +150,13 @@
             </LinearLayout>
         </RelativeLayout>
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:background="@color/white">
+
+            <include layout="@layout/main_nav_drawer" />
+    </RelativeLayout>
     </androidx.drawerlayout.widget.DrawerLayout>
 </RelativeLayout>
