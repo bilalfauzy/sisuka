@@ -1,5 +1,6 @@
 package com.example.sisuka.adapter;
 
+import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,7 +9,6 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.sisuka.EditActivity;
@@ -18,9 +18,11 @@ import com.example.sisuka.modeldata.Surat;
 import java.util.List;
 
 public class ListSuratAdapter extends RecyclerView.Adapter<ListSuratAdapter.ViewHolder> {
-    List<Surat> mListSurat;
+    private List<Surat> mListSurat;
+    private Context context;
 
-    public ListSuratAdapter(List<Surat> ListSurat){
+    public ListSuratAdapter(Context mContext, List<Surat> ListSurat){
+        context = mContext;
         mListSurat = ListSurat;
     }
 
@@ -78,8 +80,9 @@ public class ListSuratAdapter extends RecyclerView.Adapter<ListSuratAdapter.View
             tvTglKirim = itemView.findViewById(R.id.tv_tgl_kirim1);
             tvPerihal = itemView.findViewById(R.id.tv_perihal1);
             tvStatus = itemView.findViewById(R.id.tv_status1);
+
+            btnEdit = itemView.findViewById(R.id.btnEdit);
+            btnHapus = itemView.findViewById(R.id.btnDelete);
         }
     }
-
-
 }

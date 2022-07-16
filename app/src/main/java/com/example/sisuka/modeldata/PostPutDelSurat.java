@@ -3,7 +3,7 @@ package com.example.sisuka.modeldata;
 import com.google.gson.annotations.SerializedName;
 
 public class PostPutDelSurat {
-    @SerializedName("Response")
+    @SerializedName("result")
     Surat surat;
 
     public Surat getSurat() {

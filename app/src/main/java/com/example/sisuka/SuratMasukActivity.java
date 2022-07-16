@@ -18,7 +18,9 @@ import com.example.sisuka.modeldata.Surat;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
+import okhttp3.OkHttpClient;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -45,12 +47,16 @@ public class SuratMasukActivity extends AppCompatActivity {
         });
 
         rvListSurat = findViewById(R.id.rv_suratmasuk);
+        rvListSurat.setHasFixedSize(true);
+
         mLayoutManager = new LinearLayoutManager(this);
         rvListSurat.setLayoutManager(mLayoutManager);
+
         mApiInterface = ApiClient.getClient().create(ApiInterface.class);
         sm = this;
         refresh();
     }
+
 
     public void refresh(){
         Call<GetSurat> getSuratCall = mApiInterface.getSuratMasuk();
@@ -59,9 +65,9 @@ public class SuratMasukActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<GetSurat> call, Response<GetSurat> response) {
                 List<Surat> listSurat =  response.body().getListSuratMasuk();
-                Log.d("Retrofit Get", "Jumlah data surat :" +String.valueOf(listSurat.size()));
-                listAdapter = new ListSuratAdapter(listSurat);
+                listAdapter = new ListSuratAdapter(getApplicationContext(), listSurat);
                 rvListSurat.setAdapter(listAdapter);
+                Log.d("Retrofit Get", "Jumlah data surat :" +String.valueOf(listSurat.size()));
             }
 
             @Override
@@ -70,4 +76,5 @@ public class SuratMasukActivity extends AppCompatActivity {
             }
         });
     }
+
 }
