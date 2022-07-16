@@ -1,6 +1,7 @@
 package com.example.sisuka.adapter;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,25 +11,29 @@ import android.widget.Toast;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.sisuka.ClickListener;
+import com.example.sisuka.Config;
 import com.example.sisuka.R;
 import com.example.sisuka.modeldata.Surat;
 import com.example.sisuka.modeldata.SuratKeluar;
 
+import java.lang.ref.WeakReference;
 import java.util.List;
 
 public class ListSuratAdapter extends RecyclerView.Adapter<ListSuratAdapter.ViewHolder> {
     private List<Surat> mListSurat;
     private Context context;
+    private final ClickListener clickListener;
 
-    public ListSuratAdapter(Context mContext, List<Surat> ListSurat){
+    public ListSuratAdapter(Context mContext, List<Surat> ListSurat, ClickListener clickListener){
         context = mContext;
         mListSurat = ListSurat;
+        this.clickListener = clickListener;
     }
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View mView = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_surat_masuk, parent, false);
-        return new ViewHolder(mView);
+      return new ViewHolder (LayoutInflater.from(parent.getContext()).inflate(R.layout.list_surat_masuk, parent, false), clickListener);
     }
 
     @Override
@@ -45,12 +50,6 @@ public class ListSuratAdapter extends RecyclerView.Adapter<ListSuratAdapter.View
         holder.tvFileSurat.setText("File Surat\t\t\t: " +surat.getFile_surat());
         holder.tvDownFile.setText("Download file surat");
 
-        holder.btnDownload.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(view.getContext(), "Downloading", Toast.LENGTH_SHORT).show();
-            }
-        });
     }
 
     @Override
@@ -58,12 +57,15 @@ public class ListSuratAdapter extends RecyclerView.Adapter<ListSuratAdapter.View
         return mListSurat.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         public TextView tvIdSurat, tvNoSurat, tvPenerima, tvPengirim, tvTglTerima, tvTglKirim, tvPerihal, tvStatus, tvFileSurat, tvDownFile;
         public Button btnDownload;
+        private WeakReference<ClickListener> listenerRef;
 
-        public ViewHolder(View itemView) {
+        public ViewHolder(View itemView, ClickListener clickListener) {
             super(itemView);
+
+            listenerRef = new WeakReference<>(clickListener);
             tvIdSurat = itemView.findViewById(R.id.tv_id_surat1);
             tvNoSurat = itemView.findViewById(R.id.tv_no_surat1);
             tvPenerima = itemView.findViewById(R.id.tv_penerima1);
@@ -76,6 +78,15 @@ public class ListSuratAdapter extends RecyclerView.Adapter<ListSuratAdapter.View
             tvDownFile = itemView.findViewById(R.id.tv_downfile1);
 
             btnDownload = itemView.findViewById(R.id.btnDownload1);
+            btnDownload.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View view) {
+            if (view.getId() == btnDownload.getId()){
+
+            }
+            listenerRef.get().onPositionClicked(getAdapterPosition());
         }
     }
 }

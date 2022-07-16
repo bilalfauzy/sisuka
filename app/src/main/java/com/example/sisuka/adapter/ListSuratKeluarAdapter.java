@@ -10,24 +10,27 @@ import android.widget.Toast;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.sisuka.ClickListener;
 import com.example.sisuka.R;
 import com.example.sisuka.modeldata.SuratKeluar;
 
+import java.lang.ref.WeakReference;
 import java.util.List;
 
 public class ListSuratKeluarAdapter extends RecyclerView.Adapter<ListSuratKeluarAdapter.ViewHolder> {
     private List<SuratKeluar> mListSuratKeluar;
     private Context context;
+    private final ClickListener clickListener;
 
-    public ListSuratKeluarAdapter(Context mContext, List<SuratKeluar> ListSuratKeluar){
+    public ListSuratKeluarAdapter(Context mContext, List<SuratKeluar> ListSuratKeluar, ClickListener clickListener){
         context = mContext;
         mListSuratKeluar = ListSuratKeluar;
+        this.clickListener = clickListener;
     }
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View mView = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_surat_keluar, parent, false);
-        return new ListSuratKeluarAdapter.ViewHolder(mView);
+        return new ViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.list_surat_keluar, parent, false), clickListener);
     }
 
     @Override
@@ -41,13 +44,6 @@ public class ListSuratKeluarAdapter extends RecyclerView.Adapter<ListSuratKeluar
         holder.tvPerihalK.setText("Perihal\t\t\t\t: " +suratKeluar.getPerihalsk());
         holder.tvFileSuratK.setText("File Surat\t\t\t: " +suratKeluar.getFile_suratkeluar());
         holder.tvDownFileK.setText("Download file surat");
-
-        holder.btnDownloadK.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(view.getContext(), "Downloading", Toast.LENGTH_SHORT).show();
-            }
-        });
     }
 
     @Override
@@ -55,12 +51,16 @@ public class ListSuratKeluarAdapter extends RecyclerView.Adapter<ListSuratKeluar
         return mListSuratKeluar.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         public TextView tvIdSuratK, tvNoSuratK, tvPenerimaK, tvPengirimK, tvTglKirimK, tvPerihalK, tvFileSuratK, tvDownFileK;
         public Button btnDownloadK;
+        private WeakReference<ClickListener> listenerRef;
 
-        public ViewHolder(View itemView) {
+
+        public ViewHolder(View itemView, ClickListener clickListener) {
             super(itemView);
+
+            listenerRef = new WeakReference<>(clickListener);
             tvIdSuratK = itemView.findViewById(R.id.tv_id_surat2);
             tvNoSuratK = itemView.findViewById(R.id.tv_no_surat2);
             tvPenerimaK = itemView.findViewById(R.id.tv_penerima2);
@@ -71,6 +71,13 @@ public class ListSuratKeluarAdapter extends RecyclerView.Adapter<ListSuratKeluar
             tvDownFileK = itemView.findViewById(R.id.tv_downfile2);
 
             btnDownloadK = itemView.findViewById(R.id.btnDownload2);
+            btnDownloadK.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View view) {
+            if (view.getId() == btnDownloadK.getId()){}
+            listenerRef.get().onPositionClicked(getAdapterPosition());
         }
     }
 }

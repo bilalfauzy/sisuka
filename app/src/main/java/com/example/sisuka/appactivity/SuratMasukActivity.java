@@ -1,19 +1,26 @@
 package com.example.sisuka.appactivity;
 
+import android.app.DownloadManager;
+import android.content.Context;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.sisuka.ClickListener;
+import com.example.sisuka.Config;
 import com.example.sisuka.R;
 import com.example.sisuka.adapter.ListSuratAdapter;
 import com.example.sisuka.apiservice.ApiClient;
 import com.example.sisuka.apiservice.ApiInterface;
 import com.example.sisuka.modeldata.GetSurat;
 import com.example.sisuka.modeldata.Surat;
+import com.example.sisuka.modeldata.SuratKeluar;
 
 import java.util.List;
 
@@ -52,7 +59,22 @@ public class SuratMasukActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<GetSurat> call, Response<GetSurat> response) {
                 List<Surat> listSurat =  response.body().getListSuratMasuk();
-                listAdapter = new ListSuratAdapter(getApplicationContext(), listSurat);
+
+                listAdapter = new ListSuratAdapter(getApplicationContext(), listSurat, new ClickListener() {
+                    @Override
+                    public void onPositionClicked(int position) {
+                        Toast.makeText(getApplicationContext(), "Downloading"+position, Toast.LENGTH_SHORT).show();
+
+                        Surat suratMasuk = listSurat.get(position);
+
+                        String namaFile = suratMasuk.getFile_surat();
+                        String urlFile = Config.FILE_URL;
+                        String urlDownload = urlFile+namaFile;
+
+                        Log.d("link", "link" +urlDownload);
+
+                    }
+                });
                 rvListSurat.setAdapter(listAdapter);
                 Log.d("Retrofit Get", "Jumlah data surat :" +String.valueOf(listSurat.size()));
             }

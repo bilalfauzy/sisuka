@@ -2,12 +2,15 @@ package com.example.sisuka.appactivity;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.sisuka.ClickListener;
+import com.example.sisuka.Config;
 import com.example.sisuka.R;
 import com.example.sisuka.adapter.ListSuratKeluarAdapter;
 import com.example.sisuka.apiservice.ApiClient;
@@ -51,7 +54,20 @@ public class SuratKeluarActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<GetSuratKeluar> call, Response<GetSuratKeluar> response) {
                 List<SuratKeluar> listSuratKeluar =  response.body().getListSuratKeluar();
-                listAdapterK = new ListSuratKeluarAdapter(getApplicationContext(), listSuratKeluar);
+
+                listAdapterK = new ListSuratKeluarAdapter(getApplicationContext(), listSuratKeluar, new ClickListener() {
+                    @Override
+                    public void onPositionClicked(int position) {
+                        Toast.makeText(getApplicationContext(), "Downloading"+position, Toast.LENGTH_SHORT).show();
+                        SuratKeluar suratKeluar = listSuratKeluar.get(position);
+
+                        String namaFile = suratKeluar.getFile_suratkeluar();
+                        String urlFile = Config.FILE_URL;
+                        String urlDownload = urlFile+namaFile;
+
+                        Log.d("link", "link" +urlDownload);
+                    }
+                });
                 rvListSuratKeluar.setAdapter(listAdapterK);
                 Log.d("Retrofit Get", "Jumlah data surat :" +String.valueOf(listSuratKeluar.size()));
             }
