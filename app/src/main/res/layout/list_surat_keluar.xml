@@ -5,62 +5,50 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="5dp"
-    android:background="@color/purple_700"
-    android:layout_marginBottom="5dp">
+    android:background="@color/purple_700">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        style="@style/Widget.Material3.CardView.Elevated"
         app:cardCornerRadius="20dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="5dp">
-
-            <ImageView
-                android:id="@+id/img_surat2"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_centerVertical="true"
-                android:layout_marginEnd="16dp"
-                tools:src="@drawable/icon1" />
+            android:padding="10dp">
 
             <TextView
                 android:id="@+id/tv_no_surat2"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_toEndOf="@+id/img_surat2"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 tools:text="Nomor surat" />
 
             <TextView
                 android:id="@+id/tv_id_surat2"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tv_no_surat2"
-                android:layout_toEndOf="@+id/img_surat2"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 tools:text="ID Surat" />
 
             <TextView
                 android:id="@+id/tv_penerima2"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tv_id_surat2"
-                android:layout_toEndOf="@+id/img_surat2"
                 android:ellipsize="end"
                 android:maxLines="2"
                 tools:text="Penerima" />
 
             <TextView
                 android:id="@+id/tv_pengirim2"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tv_penerima2"
-                android:layout_toEndOf="@+id/img_surat2"
                 android:ellipsize="end"
                 android:maxLines="2"
                 tools:text="Pengirim" />
@@ -68,36 +56,33 @@
 
             <TextView
                 android:id="@+id/tv_tgl_kirim2"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tv_pengirim2"
-                android:layout_toEndOf="@+id/img_surat2"
                 android:ellipsize="end"
                 android:maxLines="2"
                 tools:text="Tanggal Kirim" />
 
             <TextView
                 android:id="@+id/tv_perihal2"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tv_tgl_kirim2"
-                android:layout_toEndOf="@+id/img_surat2"
                 android:ellipsize="end"
                 android:maxLines="2"
                 tools:text="Perihal" />
 
             <TextView
                 android:id="@+id/tv_file_surat2"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tv_perihal2"
-                android:layout_toEndOf="@+id/img_surat2"
                 android:ellipsize="end"
                 android:maxLines="2"
                 tools:text="File Surat" />
 
             <TextView
-                android:id="@+id/tv_downfile"
+                android:id="@+id/tv_downfile2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"

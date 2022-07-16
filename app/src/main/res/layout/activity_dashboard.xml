@@ -2,136 +2,149 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/dashboard"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/dashboard"
     tools:context=".Dashboard">
 
     <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawerL"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/drawerL">
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
-            <include
-                layout="@layout/main_toolbar"/>
+
+            <include layout="@layout/main_toolbar" />
 
             <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="#FCF8E8">
+
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:orientation="vertical">
 
                     <GridLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
+                        android:alignmentMode="alignMargins"
                         android:columnCount="1"
-                        android:rowCount="1"
                         android:columnOrderPreserved="false"
-                        android:alignmentMode="alignMargins">
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="match_parent"
-                        android:layout_height="150dp"
-                        android:layout_margin="30dp"
-                        app:cardElevation="40dp"
-                        app:cardCornerRadius="10dp">
-                        <ImageView
-                            android:layout_width="70dp"
-                            android:layout_height="70dp"
-                            android:src="@drawable/icon1"
-                            android:layout_marginLeft="25dp"
-                            android:layout_marginTop="25dp"/>
-                        <LinearLayout
+                        android:rowCount="1">
+
+                        <androidx.cardview.widget.CardView
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="110dp"
-                            android:orientation="vertical"
-                            android:gravity="center"
-                            android:layout_marginTop="40dp">
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Surat Masuk"
-                                android:textStyle="bold"
-                                android:textSize="20sp"
-                                android:textColor="@color/black"
-                                android:id="@+id/title1"/>
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Perlu Anda Baca"
-                                android:textStyle="bold"
-                                android:id="@+id/text_title1"/>
-                        </LinearLayout>
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_marginTop="100dp">
-                            <Button
-                                android:id="@+id/d_button1"
+                            android:layout_height="150dp"
+                            android:layout_margin="30dp"
+                            app:cardCornerRadius="10dp"
+                            app:cardElevation="40dp">
+
+                            <ImageView
+                                android:layout_width="70dp"
+                                android:layout_height="70dp"
+                                android:layout_marginLeft="25dp"
+                                android:layout_marginTop="25dp"
+                                android:src="@drawable/icon1" />
+
+                            <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="Lihat Sekarang"
-                                android:textSize="20sp"
-                                android:textStyle="bold"/>
-                        </LinearLayout>
+                                android:layout_marginLeft="110dp"
+                                android:layout_marginTop="40dp"
+                                android:gravity="center"
+                                android:orientation="vertical">
 
-                    </androidx.cardview.widget.CardView>
+                                <TextView
+                                    android:id="@+id/title1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Surat Masuk"
+                                    android:textColor="@color/black"
+                                    android:textSize="20sp"
+                                    android:textStyle="bold" />
 
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="match_parent"
-                        android:layout_height="150dp"
-                        android:layout_margin="30dp"
-                        app:cardElevation="40dp"
-                        app:cardCornerRadius="10dp">
+                                <TextView
+                                    android:id="@+id/text_title1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Perlu Anda Baca"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
 
-                        <ImageView
-                            android:layout_width="70dp"
-                            android:layout_height="70dp"
-                            android:src="@drawable/icon1"
-                            android:layout_marginLeft="25dp"
-                            android:layout_marginTop="25dp"/>
-                        <LinearLayout
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="100dp">
+
+                                <Button
+                                    android:id="@+id/d_button1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Lihat Sekarang"
+                                    android:textSize="20sp"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="110dp"
-                            android:orientation="vertical"
-                            android:gravity="center"
-                            android:layout_marginTop="40dp">
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Surat Keluar"
-                                android:textStyle="bold"
-                                android:textSize="20sp"
-                                android:textColor="@color/black"
-                                android:id="@+id/title2"/>
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Perlu Anda Baca"
-                                android:textStyle="bold"
-                                android:id="@+id/text_title2"/>
-                        </LinearLayout>
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_marginTop="100dp">
-                            <Button
-                                android:id="@+id/d_button2"
+                            android:layout_height="150dp"
+                            android:layout_margin="30dp"
+                            app:cardCornerRadius="10dp"
+                            app:cardElevation="40dp">
+
+                            <ImageView
+                                android:layout_width="70dp"
+                                android:layout_height="70dp"
+                                android:layout_marginLeft="25dp"
+                                android:layout_marginTop="25dp"
+                                android:src="@drawable/icon1" />
+
+                            <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="Lihat Sekarang"
-                                android:textSize="20sp"
-                                android:textStyle="bold"/>
-                        </LinearLayout>
-                    </androidx.cardview.widget.CardView>
+                                android:layout_marginLeft="110dp"
+                                android:layout_marginTop="40dp"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/title2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Surat Keluar"
+                                    android:textColor="@color/black"
+                                    android:textSize="20sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/text_title2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Perlu Anda Baca"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="100dp">
+
+                                <Button
+                                    android:id="@+id/d_button2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Lihat Sekarang"
+                                    android:textSize="20sp"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
                     </GridLayout>
                 </LinearLayout>
 

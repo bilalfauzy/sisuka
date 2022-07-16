@@ -34,15 +34,16 @@ public class ListSuratAdapter extends RecyclerView.Adapter<ListSuratAdapter.View
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         Surat surat = mListSurat.get(position);
-        holder.tvIdSurat.setText("Id Surat\t\t: " +surat.getId_surat());
+        holder.tvIdSurat.setText("Id Surat\t\t\t: " +surat.getId_surat());
         holder.tvNoSurat.setText("Nomor Surat\t: " +surat.getNomor_surat());
-        holder.tvPenerima.setText("Penerima\t\t: " +surat.getPenerima());
-        holder.tvPengirim.setText("Pengirim\t\t: " +surat.getPengirim());
-        holder.tvTglTerima.setText("Tanggal Terima\t: " +surat.getTgl_terima());
+        holder.tvPenerima.setText("Penerima\t\t\t: " +surat.getPenerima());
+        holder.tvPengirim.setText("Pengirim\t\t\t: " +surat.getPengirim());
+        holder.tvTglTerima.setText("Tanggal Terima: " +surat.getTgl_terima());
         holder.tvTglKirim.setText("Tanggal Kirim\t: " +surat.getTgl_kirim());
-        holder.tvPerihal.setText("Perihal\t\t: " +surat.getPerihal());
-        holder.tvStatus.setText("Status\t\t: " +surat.getStatus());
-        holder.tvFileSurat.setText("File Surat\t\t: " +surat.getFile_surat());
+        holder.tvPerihal.setText("Perihal\t\t\t\t: " +surat.getPerihal());
+        holder.tvStatus.setText("Status\t\t\t\t: " +surat.getStatus());
+        holder.tvFileSurat.setText("File Surat\t\t\t: " +surat.getFile_surat());
+        holder.tvDownFile.setText("Download file surat");
 
         holder.btnDownload.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,7 +59,7 @@ public class ListSuratAdapter extends RecyclerView.Adapter<ListSuratAdapter.View
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        public TextView tvIdSurat, tvNoSurat, tvPenerima, tvPengirim, tvTglTerima, tvTglKirim, tvPerihal, tvStatus, tvFileSurat;
+        public TextView tvIdSurat, tvNoSurat, tvPenerima, tvPengirim, tvTglTerima, tvTglKirim, tvPerihal, tvStatus, tvFileSurat, tvDownFile;
         public Button btnDownload;
 
         public ViewHolder(View itemView) {
@@ -72,6 +73,7 @@ public class ListSuratAdapter extends RecyclerView.Adapter<ListSuratAdapter.View
             tvPerihal = itemView.findViewById(R.id.tv_perihal1);
             tvStatus = itemView.findViewById(R.id.tv_status1);
             tvFileSurat = itemView.findViewById(R.id.tv_file_surat1);
+            tvDownFile = itemView.findViewById(R.id.tv_downfile1);
 
             btnDownload = itemView.findViewById(R.id.btnDownload1);
         }

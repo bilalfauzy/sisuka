@@ -42,13 +42,16 @@ public class Dashboard extends AppCompatActivity implements View.OnClickListener
             case R.id.d_button1:
                 Intent intent = new Intent(Dashboard.this, SuratMasukActivity.class);
                 startActivity(intent);
+                break;
             case R.id.d_button2:
                 Intent intent1 = new Intent(Dashboard.this, SuratKeluarActivity.class);
                 startActivity(intent1);
+                break;
             case R.id.btn_logout:
                 FirebaseAuth.getInstance().signOut();
                 startActivity(new Intent(getApplicationContext(), LoginActivity.class));
                 finish();
+                break;
         }
     }
 

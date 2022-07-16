@@ -33,13 +33,15 @@ public class ListSuratKeluarAdapter extends RecyclerView.Adapter<ListSuratKeluar
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         SuratKeluar suratKeluar = mListSuratKeluar.get(position);
-        holder.tvIdSuratK.setText("ID Surat\t\t: " +suratKeluar.getId_suratkeluar());
+        holder.tvIdSuratK.setText("ID Surat\t\t\t: " +suratKeluar.getId_suratkeluar());
         holder.tvNoSuratK.setText("Nomor Surat\t: " +suratKeluar.getNomor_suratkeluar());
-        holder.tvPenerimaK.setText("Penerima\t\t: " +suratKeluar.getPenerimask());
-        holder.tvPengirimK.setText("Pengirim\t\t: " +suratKeluar.getPengirimsk());
+        holder.tvPenerimaK.setText("Penerima\t\t\t: " +suratKeluar.getPenerimask());
+        holder.tvPengirimK.setText("Pengirim\t\t\t: " +suratKeluar.getPengirimsk());
         holder.tvTglKirimK.setText("Tanggal Kirim\t: " +suratKeluar.getTgl_kirimsk());
-        holder.tvPerihalK.setText("Perihal\t\t: " +suratKeluar.getPerihalsk());
-        holder.tvFileSuratK.setText("File Surat\t\t: " +suratKeluar.getFile_suratkeluar());
+        holder.tvPerihalK.setText("Perihal\t\t\t\t: " +suratKeluar.getPerihalsk());
+        holder.tvFileSuratK.setText("File Surat\t\t\t: " +suratKeluar.getFile_suratkeluar());
+        holder.tvDownFileK.setText("Download file surat");
+
         holder.btnDownloadK.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -54,7 +56,7 @@ public class ListSuratKeluarAdapter extends RecyclerView.Adapter<ListSuratKeluar
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        public TextView tvIdSuratK, tvNoSuratK, tvPenerimaK, tvPengirimK, tvTglKirimK, tvPerihalK, tvFileSuratK;
+        public TextView tvIdSuratK, tvNoSuratK, tvPenerimaK, tvPengirimK, tvTglKirimK, tvPerihalK, tvFileSuratK, tvDownFileK;
         public Button btnDownloadK;
 
         public ViewHolder(View itemView) {
@@ -66,6 +68,7 @@ public class ListSuratKeluarAdapter extends RecyclerView.Adapter<ListSuratKeluar
             tvTglKirimK = itemView.findViewById(R.id.tv_tgl_kirim2);
             tvPerihalK = itemView.findViewById(R.id.tv_perihal2);
             tvFileSuratK = itemView.findViewById(R.id.tv_file_surat2);
+            tvDownFileK = itemView.findViewById(R.id.tv_downfile2);
 
             btnDownloadK = itemView.findViewById(R.id.btnDownload2);
         }
