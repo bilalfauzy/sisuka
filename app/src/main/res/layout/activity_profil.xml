@@ -7,23 +7,85 @@
     tools:context=".appactivity.Notifikasi">
 
     <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawerL"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/drawerL">
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:background="@color/silverback"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/tvProfile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="24sp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="40dp"
+                    android:text="Profile User" />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvProfile"
+                    style="@style/Widget.Material3.CardView.Elevated"
+                    app:cardCornerRadius="20dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="5dp"
+                        android:gravity="center_horizontal">
+
+                        <ImageView
+                            android:id="@+id/imgUser"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            android:src="@drawable/user" />
+
+                        <TextView
+                            android:id="@+id/namaUser"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/imgUser"
+                            android:text="Nama user"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/emailUser"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="16sp"
+                            android:layout_below="@+id/namaUser"
+                            android:text="Email user" />
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+            </RelativeLayout>
+        </RelativeLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
-            <include
-                layout="@layout/main_toolbar"/>
+
+            <include layout="@layout/main_toolbar" />
         </LinearLayout>
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="start"
             android:background="@color/white">
-            <include
-                layout="@layout/main_nav_drawer"/>
+
+            <include layout="@layout/main_nav_drawer" />
         </RelativeLayout>
     </androidx.drawerlayout.widget.DrawerLayout>
+
 </RelativeLayout>

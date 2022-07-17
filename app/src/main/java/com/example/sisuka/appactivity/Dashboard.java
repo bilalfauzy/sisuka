@@ -50,6 +50,15 @@ public class Dashboard extends AppCompatActivity implements View.OnClickListener
         }
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent a = new Intent(Intent.ACTION_MAIN);
+        a.addCategory(Intent.CATEGORY_HOME);
+        a.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(a);
+    }
+
     public void ClickMenu(View view){
        openDrawer(drawerLayout);
     }
@@ -75,7 +84,6 @@ public class Dashboard extends AppCompatActivity implements View.OnClickListener
         //redict act to profile
         redirectActivity(this,Notifikasi.class);
     }
-
     public void ClickProfile(View view){
 
         redirectActivity(this,Profil.class);

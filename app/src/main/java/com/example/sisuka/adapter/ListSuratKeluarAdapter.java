@@ -36,13 +36,13 @@ public class ListSuratKeluarAdapter extends RecyclerView.Adapter<ListSuratKeluar
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         SuratKeluar suratKeluar = mListSuratKeluar.get(position);
-        holder.tvIdSuratK.setText("ID Surat\t\t\t: " +suratKeluar.getId_suratkeluar());
-        holder.tvNoSuratK.setText("Nomor Surat\t: " +suratKeluar.getNomor_suratkeluar());
-        holder.tvPenerimaK.setText("Penerima\t\t\t: " +suratKeluar.getPenerimask());
-        holder.tvPengirimK.setText("Pengirim\t\t\t: " +suratKeluar.getPengirimsk());
-        holder.tvTglKirimK.setText("Tanggal Kirim\t: " +suratKeluar.getTgl_kirimsk());
-        holder.tvPerihalK.setText("Perihal\t\t\t\t: " +suratKeluar.getPerihalsk());
-        holder.tvFileSuratK.setText("File Surat\t\t\t: " +suratKeluar.getFile_suratkeluar());
+        holder.tvIdSuratK.setText("ID Surat: " +suratKeluar.getId_suratkeluar());
+        holder.tvNoSuratK.setText("Nomor Surat: " +suratKeluar.getNomor_suratkeluar());
+        holder.tvPenerimaK.setText("Penerima: " +suratKeluar.getPenerimask());
+        holder.tvPengirimK.setText("Pengirim: " +suratKeluar.getPengirimsk());
+        holder.tvTglKirimK.setText("Tanggal Kirim: " +suratKeluar.getTgl_kirimsk());
+        holder.tvPerihalK.setText("Perihal: " +suratKeluar.getPerihalsk());
+        holder.tvFileSuratK.setText("File Surat: " +suratKeluar.getFile_suratkeluar());
         holder.tvDownFileK.setText("Download file surat");
     }
 

@@ -8,14 +8,20 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.example.sisuka.R;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class Profil extends AppCompatActivity {
 
     DrawerLayout drawerLayout;
     Button btn_logout;
+    TextView tvNamaUser, tvEmailUser;
+    ImageView imgUser;
+    FirebaseUser fbUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +30,17 @@ public class Profil extends AppCompatActivity {
 
         drawerLayout = findViewById(R.id.drawerL);
         btn_logout = findViewById(R.id.btn_logout);
+        tvNamaUser = findViewById(R.id.namaUser);
+        tvEmailUser = findViewById(R.id.emailUser);
+        imgUser = findViewById(R.id.imgUser);
+
+        fbUser = FirebaseAuth.getInstance().getCurrentUser();
+
+        if (fbUser != null){
+            tvNamaUser.setText("Username:\n" +fbUser.getDisplayName());
+            tvEmailUser.setText("Password:\n" +fbUser.getEmail());
+        }
+        imgUser.setImageResource(R.drawable.user);
 
         btn_logout.setOnClickListener(view -> {
             FirebaseAuth.getInstance().signOut();

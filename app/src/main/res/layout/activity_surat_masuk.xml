@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/silverback"
+    android:isScrollContainer="true"
     android:padding="5dp">
 
     <TextView
