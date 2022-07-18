@@ -54,6 +54,7 @@ public class SuratMasukActivity extends AppCompatActivity {
 
 
     public void refresh(){
+        //menjalankan get method retrofit
         Call<GetSurat> getSuratCall = mApiInterface.getSuratMasuk();
 
         getSuratCall.enqueue(new Callback<GetSurat>() {
@@ -61,11 +62,12 @@ public class SuratMasukActivity extends AppCompatActivity {
             public void onResponse(Call<GetSurat> call, Response<GetSurat> response) {
                 List<Surat> listSurat =  response.body().getListSuratMasuk();
 
+                //adapter ini berfungsi menempelkan data pada recyclerview
                 listAdapter = new ListSuratAdapter(getApplicationContext(), listSurat, new ClickListener() {
                     @Override
                     public void onPositionClicked(int position) {
+                        //fungsi download, membuka link download pada browser
                         Toast.makeText(getApplicationContext(), "Downloading..", Toast.LENGTH_SHORT).show();
-
                         Surat suratMasuk = listSurat.get(position);
 
                         String namaFile = suratMasuk.getFile_surat();

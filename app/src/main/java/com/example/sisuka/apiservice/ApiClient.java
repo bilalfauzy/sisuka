@@ -9,6 +9,8 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ApiClient {
+    //menjalankan library retrofit dan menghubungkan ke rest server
+
     public static final String BASE_URL = Config.BASE_URL;
     private static Retrofit retrofit = null;
 

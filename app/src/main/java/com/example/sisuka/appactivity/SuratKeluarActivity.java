@@ -51,15 +51,18 @@ public class SuratKeluarActivity extends AppCompatActivity {
     }
 
     private void refresh() {
+        //menjalankan get method retrofit
         Call<GetSuratKeluar> getSuratKeluarCall = mApiInterface.getSuratKeluar();
         getSuratKeluarCall.enqueue(new Callback<GetSuratKeluar>() {
             @Override
             public void onResponse(Call<GetSuratKeluar> call, Response<GetSuratKeluar> response) {
                 List<SuratKeluar> listSuratKeluar =  response.body().getListSuratKeluar();
 
+                //adapter ini berfungsi menempelkan data pada recyclerview
                 listAdapterK = new ListSuratKeluarAdapter(getApplicationContext(), listSuratKeluar, new ClickListener() {
                     @Override
                     public void onPositionClicked(int position) {
+                        //fungsi download, membuka link download pada browser
                         Toast.makeText(getApplicationContext(), "Downloading..", Toast.LENGTH_SHORT).show();
                         SuratKeluar suratKeluar = listSuratKeluar.get(position);
 
@@ -75,6 +78,7 @@ public class SuratKeluarActivity extends AppCompatActivity {
                     }
                 });
                 rvListSuratKeluar.setAdapter(listAdapterK);
+
                 Log.d("Retrofit Get", "Jumlah data surat :" +String.valueOf(listSuratKeluar.size()));
             }
 

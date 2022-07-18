@@ -38,6 +38,8 @@ public class ListSuratAdapter extends RecyclerView.Adapter<ListSuratAdapter.View
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
+        //menempelkan data list surat ke recyclerview
+
         Surat surat = mListSurat.get(position);
         holder.tvIdSurat.setText("ID Surat: " +surat.getId_surat());
         holder.tvNoSurat.setText("Nomor Surat: " +surat.getNomor_surat());
